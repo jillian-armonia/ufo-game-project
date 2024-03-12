@@ -42,3 +42,24 @@ p{
 hr{
     border:#92D050 solid 5px;
 }
+
+a{
+    text-decoration: none;
+    background-color: #92D050;
+    font-family: 'silkscreennormal';
+    color: darkgreen;
+    font-size: 3em;
+    border-radius: 5px;
+    padding: 5px;
+    border: green solid 5px;
+}
+
+a:hover{
+    background-color: #025702c8;
+    color: #92D050;
+}
+
+a:active{
+    background-color: #a8ee5d;
+    color: #025702c8;
+}
