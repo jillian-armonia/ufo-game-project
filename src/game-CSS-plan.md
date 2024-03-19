@@ -29,3 +29,18 @@ Word
 3. horizontally centered
 4. vertically at the end of the container
 5. font-family - pixel font
+
+Letters
+1. margin - 20px
+2. centered
+3. it should fill up the space
+
+Letters as buttons
+1. margin - 5px
+2. padding - 10px
+3. font-size - 1.2rem
+4. border-radius - make it circular
+5. background color - dark green
+6. color - light green
+7. cursor - pointer
+8. font-family - pixel font
