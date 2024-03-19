@@ -39,8 +39,14 @@ Letters as buttons
 1. margin - 5px
 2. padding - 10px
 3. font-size - 1.2rem
-4. border-radius - make it circular
+4. border-radius - make it circular (50%)
 5. background color - dark green
 6. color - light green
 7. cursor - pointer
 8. font-family - pixel font
+
+How to test out the CSS
+
+1. To check the buttons, create elements with buttons and classes as letters
+2. To check the image, add an img element with the class of UFO
+3. Put text in the word container to check it
