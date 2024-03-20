@@ -17,7 +17,7 @@ Screen img
 1. max-width - 100%
 2. max-height - 100%
 
-UFO image
+UFO class
 1. width - 400px
 2. height - 400px
 3. margin - 20px

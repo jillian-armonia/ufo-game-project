@@ -63,3 +63,56 @@ a:active{
     background-color: #a8ee5d;
     color: #025702c8;
 }
+
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 90vw;
+    border-right: 10px solid #025702c8;
+    border-left: 10px solid #025702c8;
+    margin: 0 auto;
+}
+
+.screen{
+    display: grid;
+    justify-content: center;
+    border: 5px #92D050 double;
+    margin: 5px 40px;
+}
+
+.screen img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.UFO{
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+}
+
+.word{
+    font-size: 3rem;
+    margin: 20px;
+    align-self: flex-end;
+    font-family: 'silkscreennormal';
+    color: #92D050;
+}
+
+.letters{
+    margin: 20px;
+}
+
+.letters button{
+    margin: 5px;
+    padding: 10px;
+    font-size: 2.2rem;
+    border-radius: 50%;
+    border-color: #013601;
+    background-color: #024c02;
+    color: #92D050;
+    cursor: pointer;
+    font-family: 'silkscreennormal';
+}
