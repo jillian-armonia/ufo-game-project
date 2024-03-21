@@ -84,10 +84,6 @@ function handleGuess(letter){
 function updateUFOGraphic(){
     const UFOContainer = document.querySelector('.UFO');
     UFOContainer.innerHTML = `<img src="../images/ufo-${imageCount}.png" alt="UFO ${imageCount}">`;
-
-    //Also update the guess counter
-    const counterContainer = document.querySelector('.guess-counter');
-    counterContainer.innerText = `You have ${13 - imageCount} chances left.`;
     imageCount++;
 }
 
@@ -95,9 +91,6 @@ function checkWinOrLose(){
     if (guessedLetters.join('') === wordToGuess){
         const UFOContainer = document.querySelector('.UFO');
         UFOContainer.innerHTML = `<img src="../images/you-win.png" alt="You Win">`;
-
-        const counterContainer = document.querySelector('.guess-counter');
-        counterContainer.innerText = "";
 
         const letterButtons = document.querySelectorAll('.letters button');
         letterButtons.forEach(button => {
@@ -111,9 +104,6 @@ function checkWinOrLose(){
         //Shows the answer by filling in the blanks
         guessedLetters = wordToGuess.split('');
         updateWordDisplay();
-
-        const counterContainer = document.querySelector('.guess-counter');
-        counterContainer.innerText = "";
 
         const letterButtons = document.querySelectorAll('.letters button');
         letterButtons.forEach(button => {
