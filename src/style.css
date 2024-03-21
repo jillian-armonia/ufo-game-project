@@ -80,6 +80,9 @@ a:active{
     justify-content: center;
     border: 5px #92D050 double;
     margin: 5px 40px;
+    width: 500px;
+    justify-self: center;
+    align-items: center;
 }
 
 .screen img{
@@ -90,26 +93,27 @@ a:active{
 .UFO{
     width: 300px;
     height: 300px;
-    margin: 20px;
+    margin-top: 10px;
     justify-self: center;
 }
 
 .word{
-    font-size: 3rem;
-    margin: 20px;
-    align-self: flex-end;
+    font-size: 2rem;
     font-family: 'silkscreennormal';
     color: #92D050;
+    margin: 10px;
 }
 
 .letters{
-    margin: 20px;
+    margin: 5px 20px;
+    width: 500px;
+    justify-self: center;
 }
 
 .letters button{
     margin: 5px;
     padding: 10px;
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     border-radius: 50%;
     border-color: #013601;
     background-color: #024c02;

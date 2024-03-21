@@ -100,7 +100,10 @@ function checkWinOrLose(){
     } else if(wrongGuesses >= maxWrongGuesses){
         const UFOContainer = document.querySelector('.UFO');
         UFOContainer.innerHTML = `<img src="../images/game-over.png" alt="Game Over">`;
-        //Figure out how to replace all the letters in guessed letters so it can show the actual word
+
+        //Shows the answer by filling in the blanks
+        guessedLetters = wordToGuess.split('');
+        updateWordDisplay();
 
         const letterButtons = document.querySelectorAll('.letters button');
         letterButtons.forEach(button => {
