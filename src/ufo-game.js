@@ -28,6 +28,7 @@ function initializeGame(){
     wordToGuess = selectRandomWord();
     guessedLetters = Array(wordToGuess.length).fill('_');
     wrongGuesses = 0;
+    imageCount = 0;
 
     //Update the word display
 
@@ -53,6 +54,11 @@ function initializeGame(){
         });
         lettersContainer.appendChild(button);
     }
+
+    //Remove play button
+    const playButton = document.querySelector('.play-again');
+    playButton.remove();
+    playButton.removeEventListener('click', initializeGame);
 }
 
 function updateWordDisplay(){
@@ -104,6 +110,8 @@ function checkWinOrLose(){
             button.disabled = true;
             button.removeEventListener('click', handleGuess);
         });
+
+        playAgain();
     } else if(wrongGuesses >= maxWrongGuesses){
         const UFOContainer = document.querySelector('.UFO');
         UFOContainer.innerHTML = `<img src="../images/game-over.png" alt="Game Over">`;
@@ -120,7 +128,18 @@ function checkWinOrLose(){
             button.disabled = true;
             button.removeEventListener('click', handleGuess);
         });
+
+        playAgain();
     }
+}
+
+function playAgain(){
+    const playButton = document.createElement("button");
+    playButton.className = "play-again";
+    playButton.innerHTML = "PLAY AGAIN?";
+    const screenContainer = document.querySelector('.screen');
+    screenContainer.insertAdjacentElement("afterbegin", playButton);
+    playButton.addEventListener('click', initializeGame);
 }
 
 window.addEventListener('load', initializeGame);

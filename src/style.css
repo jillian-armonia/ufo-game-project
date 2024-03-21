@@ -136,3 +136,13 @@ a:active{
     padding: 0;
     margin: 5px 0;
 }
+
+.play-again{
+    border-color: #013601;
+    background-color: #024c02;
+    color: #92D050;
+    cursor: pointer;
+    font-family: 'silkscreennormal';
+    font-size: 2rem;
+    margin-top: 2px;
+}
