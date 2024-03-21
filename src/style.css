@@ -117,3 +117,13 @@ a:active{
     cursor: pointer;
     font-family: 'silkscreennormal';
 }
+
+.letters button:disabled{
+    cursor: default;
+    color: darkgreen;
+    background-color: #013601;
+}
+
+.invisible{
+    opacity: 0;
+}

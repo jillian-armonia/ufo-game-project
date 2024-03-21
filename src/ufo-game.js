@@ -48,6 +48,8 @@ function initializeGame(){
         button.innerText = letter;
         button.addEventListener('click', function(){
             handleGuess(letter);
+            button.classList.add("invisible");
+            button.disabled = true;
         });
         lettersContainer.appendChild(button);
     }
@@ -59,11 +61,6 @@ function updateWordDisplay(){
 }
 
 function handleGuess(letter){
-    //If the letter has already been guessed, do nothing
-    if (guessedLetters.includes(letter)){
-        return;
-    }
-
     //Add the letter to the list of guessed letters
     guessedLetters.forEach((guessedLetter, index) => {
         if (wordToGuess[index] === letter){
