@@ -6,9 +6,9 @@ const words = [
     "DODGEBALL",
     "SOCCER",
     "TENNIS",
- // "TABLE TENNIS",  **This has space in between that could be bad for the code
+    "TABLE TENNIS",
     "BADMINTON",
-//  "TRACK AND FIELD",
+    "TRACK AND FIELD",
     "SWIMMING",
     "SKATING",
     "SKIING",
@@ -25,10 +25,17 @@ function selectRandomWord(){
 };
 
 function initializeGame(){
-    wordToGuess = selectRandomWord();
-    guessedLetters = Array(wordToGuess.length).fill('_');
     wrongGuesses = 0;
     imageCount = 0;
+    wordToGuess = selectRandomWord();
+    let toGuessArray = wordToGuess.split('');
+    guessedLetters = toGuessArray.map((letter) => {
+        if (/[A-Z]/.test(letter)){
+            return '_';
+        } else {
+            return ' ';
+        }
+    });
 
     //Update the word display
 
@@ -63,7 +70,7 @@ function initializeGame(){
 
 function updateWordDisplay(){
     const wordContainer = document.querySelector('.word');
-    wordContainer.innerText = guessedLetters.join(' ');
+    wordContainer.innerText = guessedLetters.join('');
 }
 
 function handleGuess(letter){
