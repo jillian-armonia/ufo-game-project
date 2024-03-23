@@ -14,7 +14,7 @@ const words = [
     "SKIING",
 ];
 
-const maxWrongGuesses = 13;
+const maxWrongGuesses = 7;
 let wordToGuess = "";
 let guessedLetters =[];
 let wrongGuesses = 0;
@@ -28,6 +28,8 @@ function initializeGame(){
     wrongGuesses = 0;
     imageCount = 0;
     wordToGuess = selectRandomWord();
+
+    //Only represent letters with underscores (for vocab with spaces)
     let toGuessArray = wordToGuess.split('');
     guessedLetters = toGuessArray.map((letter) => {
         if (/[A-Z]/.test(letter)){
@@ -96,11 +98,11 @@ function handleGuess(letter){
 
 function updateUFOGraphic(){
     const UFOContainer = document.querySelector('.UFO');
-    UFOContainer.innerHTML = `<img src="../images/ufo-${imageCount}.png" alt="UFO ${imageCount}">`;
+    UFOContainer.innerHTML = `<img src="../images/ufo-gifs/ufo-${imageCount}.gif" alt="UFO ${imageCount}">`;
 
     //Also update the guess counter
     const counterContainer = document.querySelector('.guess-counter');
-    counterContainer.innerText = `You have ${13 - imageCount} chances left.`;
+    counterContainer.innerText = `You have ${maxWrongGuesses - imageCount} chances left.`;
     imageCount++;
 }
 
@@ -121,7 +123,7 @@ function checkWinOrLose(){
         playAgain();
     } else if(wrongGuesses >= maxWrongGuesses){
         const UFOContainer = document.querySelector('.UFO');
-        UFOContainer.innerHTML = `<img src="../images/game-over.png" alt="Game Over">`;
+        UFOContainer.innerHTML = `<img src="../images/ufo-gifs/game-over.gif" alt="Game Over">`;
 
         //Shows the answer by filling in the blanks
         guessedLetters = wordToGuess.split('');
