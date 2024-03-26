@@ -14,7 +14,7 @@ const words = [
     "SKIING",
 ];
 
-const maxWrongGuesses = 7;
+const maxWrongGuesses = 8;
 let wordToGuess = "";
 let guessedLetters =[];
 let wrongGuesses = 0;
@@ -68,11 +68,18 @@ function initializeGame(){
     const playButton = document.querySelector('.play-again');
     playButton.remove();
     playButton.removeEventListener('click', initializeGame);
+
+    //Remove animations on word
+    const wordContainer = document.querySelector(".word");
+    wordContainer.classList.remove("bounceOdd");
 }
 
 function updateWordDisplay(){
     const wordContainer = document.querySelector('.word');
-    wordContainer.innerText = guessedLetters.join('');
+    //wordContainer.innerText = guessedLetters.join('');
+    wordContainer.innerHTML = guessedLetters.map((letter, index) => {
+        return `<span style="--i:${index + 1}">${letter}</span>`
+    }).join('');
 }
 
 function handleGuess(letter){
@@ -110,6 +117,7 @@ function checkWinOrLose(){
     if (guessedLetters.join('') === wordToGuess){
         const UFOContainer = document.querySelector('.UFO');
         UFOContainer.innerHTML = `<img src="../images/you-win.png" alt="You Win">`;
+        UFOContainer.classList.add("win");
 
         const counterContainer = document.querySelector('.guess-counter');
         counterContainer.innerText = "";
@@ -121,6 +129,12 @@ function checkWinOrLose(){
         });
 
         playAgain();
+
+        //Animate the letters
+        const wordContainer = document.querySelector(".word");
+        wordContainer.classList.add("bounce");
+
+
     } else if(wrongGuesses >= maxWrongGuesses){
         const UFOContainer = document.querySelector('.UFO');
         UFOContainer.innerHTML = `<img src="../images/ufo-gifs/game-over.gif" alt="Game Over">`;
@@ -139,6 +153,9 @@ function checkWinOrLose(){
         });
 
         playAgain();
+
+        const wordContainer = document.querySelector(".word");
+        wordContainer.classList.add("lose");
     }
 }
 
