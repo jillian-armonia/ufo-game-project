@@ -71,7 +71,11 @@ function initializeGame(){
 
     //Remove animations on word
     const wordContainer = document.querySelector(".word");
-    wordContainer.classList.remove("bounceOdd");
+    wordContainer.classList.remove("bounce");
+    wordContainer.classList.remove("lose");
+
+    const UFOContainer = document.querySelector('.UFO');
+    UFOContainer.classList.remove("win");
 }
 
 function updateWordDisplay(){
