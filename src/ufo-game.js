@@ -12,6 +12,13 @@ const words = [
     "SWIMMING",
     "SKATING",
     "SKIING",
+    "RUGBY",
+    "CRICKET",
+    "GYMNASTICS",
+    "JUDO",
+    "KENDO",
+    "SUMO",
+    "SKATEBOARDING",
 ];
 
 const maxWrongGuesses = 8;
@@ -120,7 +127,7 @@ function updateUFOGraphic(){
 function checkWinOrLose(){
     if (guessedLetters.join('') === wordToGuess){
         const UFOContainer = document.querySelector('.UFO');
-        UFOContainer.innerHTML = `<img src="../images/you-win.png" alt="You Win">`;
+        UFOContainer.innerHTML = `<img src="../images/ufo-gifs/you-win.gif" alt="You Win">`;
         UFOContainer.classList.add("win");
 
         const counterContainer = document.querySelector('.guess-counter');
