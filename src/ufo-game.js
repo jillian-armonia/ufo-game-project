@@ -19,6 +19,12 @@ const words = [
     "KENDO",
     "SUMO",
     "SKATEBOARDING",
+    "GOLF",
+    "KARATE",
+    "MARATHON",
+    "DANCING",
+    "SURFING",
+    "WRESTLING",
 ];
 
 const maxWrongGuesses = 8;
