@@ -169,6 +169,53 @@ a:active{
     animation-delay: calc(.2s * var(--i));
 }
 
+.change-category{
+    border-color: #013601;
+    background-color: #024c02;
+    color: #92D050;
+    cursor: pointer;
+    font-family: 'silkscreennormal';
+    font-size: 2rem;
+    margin: 2px auto;
+}
+
+.change-category:hover{
+    background-color: #92D050;
+    color: #013601;
+}
+
+.word-categories{
+    position: absolute;
+    background-color:#92D050;
+    padding: 60px 100px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+    max-height: 400px;
+    z-index: 1;
+    border-radius: 10px;
+    border: #024c02 double 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    justify-content: center;
+}
+
+.word-categories button{
+    background-color: #024c02;
+    color: #a8ee5d;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'silkscreennormal';
+    font-size: 1.2rem;
+}
+
+.word-categories button:hover{
+    background-color: #92D050;
+    color: #013601;
+}
 
 @keyframes bounce{
     0%,40%,100% {
