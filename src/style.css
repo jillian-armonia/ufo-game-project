@@ -186,7 +186,7 @@ a:active{
 
 .word-categories{
     position: absolute;
-    background-color:#92D050;
+    background-color:#80bd3e;
     padding: 60px 100px;
     top: 0;
     bottom: 0;
@@ -201,6 +201,7 @@ a:active{
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     justify-content: center;
+    gap: 10px;
 }
 
 .word-categories button{

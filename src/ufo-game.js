@@ -775,7 +775,6 @@ var imageCount = 0;
 var selectedWords;
 const categoryContainer = document.querySelector(".word-categories");
 
-
 window.addEventListener('load', selectCategory);
 
 function selectRandomWord(){
@@ -981,5 +980,6 @@ function changeCategory(){
     screenContainer.insertAdjacentElement("beforeend", changeButton);
     changeButton.addEventListener('click', () => {
         categoryContainer.style.display = "grid";
-    })
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
