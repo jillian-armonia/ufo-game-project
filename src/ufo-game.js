@@ -841,17 +841,44 @@ function initializeGame(){
     })
 }
 
+//Select a category of words to choose from
+
 function selectCategory(){
+    let allCategories = [];
+    const regularContainer = document.querySelector(".regular");
+
     for (let category in wordCategories){
+        allCategories = allCategories.concat(wordCategories[category]);
         const button = document.createElement("button");
         button.innerText = category.toUpperCase();
         selectedWords = wordCategories[category];
-        categoryContainer.appendChild(button);
+        regularContainer.appendChild(button);
         button.addEventListener("click", () => {
             selectedWords = wordCategories[category];
             initializeGame();
         });
     };
+
+    //Random category button
+    const randomContainer = document.querySelector(".random");
+    const randomCategory = document.createElement("button");
+    randomCategory.innerText = "RANDOM CATEGORY";
+    randomContainer.appendChild(randomCategory);
+    randomCategory.addEventListener("click", () => {
+        let category = Object.keys(wordCategories);
+        selectedWords = wordCategories[category[category.length * Math.random() << 0]];
+        initializeGame();
+    });
+
+    //Random word button
+    const randomWord = document.createElement("button");
+    randomWord.innerText = "RANDOM WORD";
+    randomContainer.appendChild(randomWord);
+    randomWord.addEventListener("click", () => {
+        console.log(allCategories);
+        selectedWords = allCategories;
+        initializeGame();
+    })
 }
 
 //Hide the category when the game is initialized
