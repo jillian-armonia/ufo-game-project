@@ -194,7 +194,7 @@ a:active{
     right: 0;
     margin: auto;
     max-width: 400px;
-    max-height: 400px;
+    max-height: 500px;
     z-index: 1;
     border-radius: 10px;
     border: #024c02 double 10px;
@@ -210,6 +210,7 @@ a:active{
     border-radius: 5px;
     font-family: 'silkscreennormal';
     font-size: 1.2rem;
+    padding: 3px;
 }
 
 .word-categories button:hover{
@@ -242,6 +243,13 @@ a:active{
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+    font-family: 'silkscreennormal';
+    color: #013601;
 }
 
 @keyframes bounce{

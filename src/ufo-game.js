@@ -774,6 +774,9 @@ let wrongGuesses = 0;
 var imageCount = 0;
 var selectedWords;
 const categoryContainer = document.querySelector(".word-categories");
+const lettersContainer = document.querySelector('.letters');
+const wordContainer = document.querySelector(".word");
+const UFOContainer = document.querySelector('.UFO');
 
 window.addEventListener('load', selectCategory);
 
@@ -796,14 +799,13 @@ function initializeGame(){
         }
     });
 
-    //Update the word display
+    //Update the word display and the UFO picture
 
     updateWordDisplay();
 
     updateUFOGraphic();
 
     //Remove any previously generated buttons
-    const lettersContainer = document.querySelector('.letters');
     while (lettersContainer.firstChild){
         lettersContainer.removeChild(lettersContainer.firstChild)
     }
@@ -822,21 +824,19 @@ function initializeGame(){
     }
 
     //Remove play button
-    const playButton = document.querySelector('.play-again');
-    playButton.remove();
-    playButton.removeEventListener('click', initializeGame);
+    const playContainer = document.querySelector('.play-again');
+    playContainer.remove();
+    playContainer.removeEventListener('click', initializeGame);
 
-    //Remove animations on word
-    const wordContainer = document.querySelector(".word");
+    //Remove animations on word and the pictures
     wordContainer.classList.remove("bounce");
     wordContainer.classList.remove("lose");
-
-    const UFOContainer = document.querySelector('.UFO');
     UFOContainer.classList.remove("win");
 
-    const changeButton = document.querySelector('.change-category');
-    changeButton.remove();
-    changeButton.removeEventListener('click', () => {
+    //Remove the categories space
+    const changeContainer = document.querySelector('.change-category');
+    changeContainer.remove();
+    changeContainer.removeEventListener('click', () => {
         categoryContainer.style.display = "flex";
     })
 }
@@ -878,7 +878,7 @@ function selectCategory(){
         console.log(allCategories);
         selectedWords = allCategories;
         initializeGame();
-    })
+    });
 }
 
 //Hide the category when the game is initialized
@@ -887,8 +887,6 @@ categoryContainer.addEventListener('click', () => {
 })
 
 function updateWordDisplay(){
-    const wordContainer = document.querySelector('.word');
-    //wordContainer.innerText = guessedLetters.join('');
     wordContainer.innerHTML = guessedLetters.map((letter, index) => {
         return `<span style="--i:${index + 1}">${letter}</span>`
     }).join('');
@@ -921,9 +919,9 @@ function handleGuess(letter){
 }
 
 function updateUFOGraphic(){
-    const UFOContainer = document.querySelector('.UFO');
     UFOContainer.innerHTML = `<img src="../images/ufo-gifs/ufo-${imageCount}.gif" alt="UFO ${imageCount}"><audio id="ufo-audio-${imageCount}" src=${UFO_AUDIO[imageCount].src} autoplay></audio>`;
 
+    //Add sounds and control the volume
     let sound = document.querySelector("audio");
     sound.volume = 0.5;
 
@@ -936,13 +934,14 @@ function updateUFOGraphic(){
 
 function checkWinOrLose(){
     if (guessedLetters.join('') === wordToGuess){
-        const UFOContainer = document.querySelector('.UFO');
         UFOContainer.innerHTML = `<img src="../images/ufo-gifs/you-win.gif" alt="You Win"><audio id="you-win-audio" src=${UFO_AUDIO[UFO_AUDIO.length - 1].src} autoplay></audio>`;
         UFOContainer.classList.add("win");
 
+        //Add sounds and control the volume
         let sound = document.querySelector("audio");
         sound.volume = 0.5;
 
+        //Clearing the guess counter
         const counterContainer = document.querySelector('.guess-counter');
         counterContainer.innerText = "";
 
@@ -955,16 +954,15 @@ function checkWinOrLose(){
         playAgain();
 
         //Animate the letters
-        const wordContainer = document.querySelector(".word");
         wordContainer.classList.add("bounce");
 
         changeCategory();
 
 
     } else if(wrongGuesses >= maxWrongGuesses){
-        const UFOContainer = document.querySelector('.UFO');
         UFOContainer.innerHTML = `<img src="../images/ufo-gifs/game-over.gif" alt="Game Over"><audio id="game-over-audio" src=${UFO_AUDIO[8].src} autoplay></audio>`;
 
+        //Add audio
         let sound = document.querySelector("audio");
         sound.volume = 0.5;
 
@@ -983,13 +981,13 @@ function checkWinOrLose(){
 
         playAgain();
 
-        const wordContainer = document.querySelector(".word");
         wordContainer.classList.add("lose");
 
         changeCategory();
     }
 }
 
+//Create the play again button
 function playAgain(){
     const playButton = document.createElement("button");
     playButton.className = "play-again";
@@ -999,6 +997,7 @@ function playAgain(){
     playButton.addEventListener('click', initializeGame);
 }
 
+//Recreate the category screen
 function changeCategory(){
     const changeButton = document.createElement("button");
     changeButton.className = "change-category";
