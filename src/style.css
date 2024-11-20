@@ -118,8 +118,8 @@ a:active{
 }
 
 .UFO{
-    width: 270px;
-    height: 270px;
+    width: 200px;
+    height: 200px;
     margin-top: 10px;
     justify-self: center;
 }
@@ -129,7 +129,7 @@ a:active{
 }
 
 .word{
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: 'silkscreennormal';
     color: #92D050;
     margin: 10px;
@@ -150,7 +150,7 @@ a:active{
 .letters button{
     margin: 5px;
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     border-radius: 50%;
     border-color: #013601;
     background-color: #024c02;

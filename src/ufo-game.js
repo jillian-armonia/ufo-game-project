@@ -919,7 +919,7 @@ function handleGuess(letter){
 }
 
 function updateUFOGraphic(){
-    UFOContainer.innerHTML = `<img src="../images/ufo-gifs/ufo-${imageCount}.gif" alt="UFO ${imageCount}"><audio id="ufo-audio-${imageCount}" src=${UFO_AUDIO[imageCount].src} autoplay></audio>`;
+    UFOContainer.innerHTML = `<img src="./images/ufo-gifs/ufo-${imageCount}.gif" alt="UFO ${imageCount}"><audio id="ufo-audio-${imageCount}" src=${UFO_AUDIO[imageCount].src} autoplay></audio>`;
 
     //Add sounds and control the volume
     let sound = document.querySelector("audio");
@@ -934,7 +934,7 @@ function updateUFOGraphic(){
 
 function checkWinOrLose(){
     if (guessedLetters.join('') === wordToGuess){
-        UFOContainer.innerHTML = `<img src="../images/ufo-gifs/you-win.gif" alt="You Win"><audio id="you-win-audio" src=${UFO_AUDIO[UFO_AUDIO.length - 1].src} autoplay></audio>`;
+        UFOContainer.innerHTML = `<img src="./images/ufo-gifs/you-win.gif" alt="You Win"><audio id="you-win-audio" src=${UFO_AUDIO[UFO_AUDIO.length - 1].src} autoplay></audio>`;
         UFOContainer.classList.add("win");
 
         //Add sounds and control the volume
@@ -960,7 +960,7 @@ function checkWinOrLose(){
 
 
     } else if(wrongGuesses >= maxWrongGuesses){
-        UFOContainer.innerHTML = `<img src="../images/ufo-gifs/game-over.gif" alt="Game Over"><audio id="game-over-audio" src=${UFO_AUDIO[8].src} autoplay></audio>`;
+        UFOContainer.innerHTML = `<img src="./images/ufo-gifs/game-over.gif" alt="Game Over"><audio id="game-over-audio" src=${UFO_AUDIO[8].src} autoplay></audio>`;
 
         //Add audio
         let sound = document.querySelector("audio");
