@@ -54,6 +54,33 @@ a{
     border: green solid 5px;
 }
 
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 6fr 6fr;
+    place-items: end start;
+    background-color: #013601;
+    color: #a8ee5d;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 5px;
+}
+
+footer div:last-of-type{
+    justify-self: end;
+}
+
+footer a{
+    font-size: inherit;
+    padding: inherit;
+    border: 0;
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
+}
+
 a:hover{
     background-color: #025702c8;
     color: #92D050;
@@ -80,6 +107,9 @@ a:active{
     justify-content: center;
     border: 5px #92D050 double;
     margin: 5px 40px;
+    width: 500px;
+    justify-self: center;
+    align-items: center;
 }
 
 .screen img{
@@ -88,31 +118,214 @@ a:active{
 }
 
 .UFO{
-    width: 300px;
-    height: 300px;
-    margin: 20px;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    justify-self: center;
+}
+
+.win{
+    animation: zoom 1s infinite alternate;
 }
 
 .word{
-    font-size: 3rem;
-    margin: 20px;
-    align-self: flex-end;
+    font-size: 2.5rem;
     font-family: 'silkscreennormal';
     color: #92D050;
+    margin: 10px;
+}
+
+.bounce span{
+    display: inline-block;
+    animation: bounce 1s infinite;
+    animation-delay: calc(.1s * var(--i));
 }
 
 .letters{
-    margin: 20px;
+    margin: 5px 20px;
+    width: 500px;
+    justify-self: center;
 }
 
 .letters button{
     margin: 5px;
     padding: 10px;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     border-radius: 50%;
     border-color: #013601;
     background-color: #024c02;
     color: #92D050;
     cursor: pointer;
     font-family: 'silkscreennormal';
+}
+
+.letters button:disabled{
+    cursor: default;
+    color: darkgreen;
+    background-color: #013601;
+}
+
+.invisible{
+    opacity: 0;
+}
+
+.guess-counter{
+    padding: 0;
+    margin: 5px 0;
+}
+
+.play-again{
+    border-color: #013601;
+    background-color: #024c02;
+    color: #92D050;
+    cursor: pointer;
+    font-family: 'silkscreennormal';
+    font-size: 2rem;
+    margin-top: 2px;
+    animation: shake .3s infinite;
+}
+
+.play-again:hover{
+    background-color: #92D050;
+    color: #013601;
+    animation: zoom 1s infinite alternate;
+}
+
+.lose span{
+    animation: blink 1s infinite alternate;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.change-category{
+    border-color: #013601;
+    background-color: #024c02;
+    color: #92D050;
+    cursor: pointer;
+    font-family: 'silkscreennormal';
+    font-size: 2rem;
+    margin: 2px auto;
+}
+
+.change-category:hover{
+    background-color: #92D050;
+    color: #013601;
+}
+
+.word-categories{
+    position: absolute;
+    background-color:#80bd3e;
+    padding: 60px 100px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+    max-height: 500px;
+    z-index: 1;
+    border-radius: 10px;
+    border: #024c02 double 10px;
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+}
+
+.word-categories button{
+    background-color: #024c02;
+    color: #a8ee5d;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'silkscreennormal';
+    font-size: 1.2rem;
+    padding: 3px;
+}
+
+.word-categories button:hover{
+    background-color: #92D050;
+    color: #013601;
+}
+
+.random {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.random button{
+    background-color: #a8ee5d;
+    color:#024c02;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.random button:hover{
+    background-color: #024c02;
+    color: #a8ee5d;
+    animation: zoom 1s infinite alternate;;
+}
+
+.regular{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+    font-family: 'silkscreennormal';
+    color: #013601;
+}
+
+@keyframes bounce{
+    0%,40%,100% {
+        transform: translateY(0)
+      }
+      20% {
+        transform: translateY(-20px)
+      }
+}
+
+@keyframes zoom {
+    from{
+        transform: scale(1);
+    }
+
+     to{
+        transform: scale(1.1);
+     }
+}
+
+@keyframes blink {
+    0%{
+        opacity: 100;
+    }
+
+    50%{
+        opacity: 50;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes shake {
+    0%{
+        transform: rotate(0);
+    }
+
+    25%{
+        transform: rotate(0.2deg);
+    }
+
+    50%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(-0.2deg);
+    }
 }

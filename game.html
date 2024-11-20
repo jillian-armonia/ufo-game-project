@@ -4,16 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <title>UFO Game</title>
-  <link rel="stylesheet" href="../src/style.css">
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
+  <div class="word-categories">
+    <h3>Choose a category:</h3>
+    <div class="random">
+    </div>
+    <div class="regular">
+
+    </div>
+  </div>
   <div class="container">
     <h1>UFO GAME</h1>
 
-    <div class="screen">
-      <div class="UFO"> <!--The UFO images will be here and this is where the win/lose message will be displayed-->
 
+
+    <div class="screen">
+      <p class="guess-counter"></p>
+      <div class="UFO"> <!--The UFO images will be here and this is where the win/lose message will be displayed-->
       </div>
 
       <div class="word"> <!--The word being guessed will be here-->
@@ -28,6 +38,6 @@
     </div>
   </div>
 
-  <script src="../src/ufo-game.js"></script>
+  <script src="./src/ufo-game.js"></script>
 </body>
 </html>
