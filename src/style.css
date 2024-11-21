@@ -103,7 +103,8 @@ a:active{
 }
 
 .screen{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     border: 5px #92D050 double;
     margin: 5px 40px;
@@ -333,19 +334,19 @@ h3{
 
 @media screen and (max-width: 600px){
     p{
-        font-size: 20px;
+        font-size: 26px;
     }
 
     h2, a{
-        font-size: 24px;
+        font-size: 30px;
     }
 
     h1{
-        font-size: 34px;
+        font-size: 50px;
     }
 
-    img{
-        height: 34px;
+    h1 > img{
+        height: 50px;
     }
 
     footer{
