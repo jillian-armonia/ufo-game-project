@@ -354,4 +354,26 @@ h3{
         flex-direction: column;
         gap: 20px;
     }
+
+    .random, .regular{
+        width: 300px;
+        grid-template-columns: auto;
+    }
+
+    .word-categories{
+        height: fit-content;
+        overflow: scroll;
+    }
+
+    .container{
+        border: none;
+    }
+
+    .screen, .letters{
+        width: 320px;
+    }
+
+    .guess-counter{
+        font-size: 20px;
+    }
 }
