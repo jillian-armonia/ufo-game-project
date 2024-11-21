@@ -58,18 +58,18 @@ footer{
     position: absolute;
     bottom: 0;
     left: 0;
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    grid-template-columns: 6fr 6fr;
-    place-items: end start;
     background-color: #013601;
     color: #a8ee5d;
     font-family: 'Courier New', Courier, monospace;
-    padding-top: 5px;
+    padding: 5px 0;
+    font-size: 1em;
 }
 
-footer div:last-of-type{
-    justify-self: end;
+footer div{
+    margin: 0 10px;
 }
 
 footer a{
@@ -103,7 +103,8 @@ a:active{
 }
 
 .screen{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     border: 5px #92D050 double;
     margin: 5px 40px;
@@ -327,5 +328,30 @@ h3{
 
     100%{
         transform: rotate(-0.2deg);
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    p{
+        font-size: 26px;
+    }
+
+    h2, a{
+        font-size: 30px;
+    }
+
+    h1{
+        font-size: 50px;
+    }
+
+    h1 > img{
+        height: 50px;
+    }
+
+    footer{
+        font-size: 14px;
+        flex-direction: column;
+        gap: 20px;
     }
 }
